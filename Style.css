@@ -1,31 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-    margin-top: 50px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #f8fafc;
+  -webkit-tap-highlight-color: transparent;
 }
 
-h1 {
-    color: #007BFF;
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-#thong-bao {
-    font-size: 18px;
-    margin-bottom: 20px;
+.card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.gradient-green {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 50%, #115e59 100%);
 }
 
-button:hover {
-    background-color: #218838;
+.category-btn.active {
+  background: #0d9488;
+  color: white;
+  border-color: #0d9488;
 }
 
+.job-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.job-card:active {
+  transform: scale(0.98);
+}
+
+.bottom-nav {
+  box-shadow: 0 -4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+
+.nav-item.active {
+  color: #0d9488;
+}
+
+.nav-item.active i {
+  color: #0d9488;
+}
+
+/* Ẩn thanh cuộn */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
