@@ -1,23 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Nhập (import) phông chữ "Inter" từ Google Fonts với các độ dày chữ khác nhau: 300 (nhạt), 400 (thường), 500 (vừa), 600 (đậm vừa), 700 (đậm) để sử dụng cho toàn trang */
 
 body {
     font-family: 'Inter', sans-serif;
 }
+/* Thiết lập phông chữ mặc định cho toàn bộ thẻ body của trang web là 'Inter', nếu không tải được sẽ dùng phông chữ không chân (sans-serif) của hệ thống */
 
 /* Tùy chỉnh thanh cuộn thanh công cụ bên trái */
+/* Khối chú thích: Định dạng giao diện cho thanh cuộn của thanh công cụ (sidebar) */
+
 .sidebar-scroll::-webkit-scrollbar {
     width: 4px;
 }
+/* Thiết lập chiều rộng của thanh cuộn trên các trình duyệt sử dụng nhân WebKit (Chrome, Safari, Edge) là 4 pixel (làm cho thanh cuộn mảnh gọn hơn) */
+
 .sidebar-scroll::-webkit-scrollbar-thumb {
     background: #374151;
     border-radius: 4px;
 }
+/* Thiết lập màu sắc cho phần nắm kéo (thumb) của thanh cuộn là mã màu xám tối (#374151) và bo tròn các góc với bán kính 4 pixel */
 
 /* Ẩn thanh cuộn cho danh mục pills nhưng vẫn vuốt được */
+/* Khối chú thích: Tùy chỉnh giúp ẩn thanh cuộn ngang của phần danh mục nhưng người dùng vẫn có thể lướt xem bình thường */
+
 .scrollbar-none::-webkit-scrollbar {
     display: none;
 }
+/* Ẩn hoàn toàn thanh cuộn trên các trình duyệt dựa trên WebKit (Chrome, Safari, Edge) cho các phần tử mang lớp .scrollbar-none */
+
 .scrollbar-none {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+/* Ẩn thanh cuộn trên Internet Explorer/Edge cũ (-ms-overflow-style: none) và trên trình duyệt Firefox (scrollbar-width: none) */
