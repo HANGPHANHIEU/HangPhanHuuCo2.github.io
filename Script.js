@@ -1,3 +1,4 @@
+// Xử lý sự kiện tương tác giao diện
 document.addEventListener('DOMContentLoaded', () => {
     const categoryBtns = document.querySelectorAll('.category-btn');
     const searchInput = document.getElementById('searchInput');
@@ -5,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const urgentCheck = document.getElementById('urgentCheck');
     const btnPostJob = document.getElementById('btnPostJob');
 
-    // Chuyển màu active khi nhấn vào các nút danh mục
+    // Chuyển đổi trạng thái nút danh mục khi bấm
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             categoryBtns.forEach(b => {
@@ -18,18 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sự kiện nút đăng việc gấp
+    // Mô phỏng tính năng Đăng việc gấp
     btnPostJob.addEventListener('click', () => {
-        alert('Mở form đăng việc gấp!');
+        alert('Chức năng đăng việc gấp đang được mở trên hệ thống mẫu.');
     });
 
-    // Lắng nghe thao tác tìm kiếm
+    // Lắng nghe thay đổi tìm kiếm
     searchInput.addEventListener('input', (e) => {
-        console.log('Từ khóa tìm kiếm:', e.target.value);
+        console.log('Đang tìm kiếm:', e.target.value);
     });
 
     locationSelect.addEventListener('change', (e) => {
-        console.log('Khu vực đã chọn:', e.target.value);
+        console.log('Đã chọn khu vực:', e.target.value);
     });
 
     urgentCheck.addEventListener('change', (e) => {
