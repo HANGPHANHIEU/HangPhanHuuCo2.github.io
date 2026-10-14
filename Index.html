@@ -1,144 +1,126 @@
 <!DOCTYPE html>
+<!-- Khai báo kiểu tài liệu là HTML5 -->
 <html lang="vi">
+<!-- Mở thẻ HTML, thiết lập ngôn ngữ hiển thị chính là tiếng Việt -->
 <head>
+    <!-- Thẻ chứa các siêu dữ liệu cấu hình cho trang web -->
     <meta charset="UTF-8">
+    <!-- Thiết lập bảng mã ký tự chuẩn UTF-8 để hiển thị đúng tiếng Việt có dấu -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Giúp trang web hiển thị tương thích, co giãn tốt trên mọi thiết bị di động (Responsive) -->
     <title>Việc Gấp - Ứng dụng tìm việc nhanh</title>
-    <!-- Tailwind CSS -->
+    <!-- Tiêu đề hiển thị trên tab của trình duyệt web -->
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome cho Icons -->
+    <!-- Nhúng thư viện Tailwind CSS trực tuyến để sử dụng các lớp (classes) định dạng sẵn -->
+
+    <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Nhúng bộ biểu tượng (icons) FontAwesome để hiển thị các icon như kính lúp, tia chớp, xe đạp,... -->
+
     <!-- File CSS riêng -->
     <link rel="stylesheet" href="style.css">
+    <!-- Liên kết đến tệp định dạng kiểu dáng tùy chỉnh (style.css) của riêng dự án -->
 </head>
-<body class="bg-[#0f172a] text-slate-100 h-screen flex overflow-hidden">
+<body class="bg-white text-slate-800 h-screen flex overflow-hidden">
+    <!-- Thẻ body chứa toàn bộ nội dung hiển thị: nền trắng, chữ màu xám đậm, chiều cao bằng toàn màn hình (h-screen), bật cơ chế Flexbox và khóa cuộn tổng thể (overflow-hidden) -->
 
-    <!-- 1. THANH CÔNG CỤ LẬP TRÌNH (BÊN TRÁI) -->
-    <aside class="w-20 bg-[#1e293b] border-r border-slate-800 flex flex-col items-center py-4 justify-between select-none sidebar-scroll overflow-y-auto z-20">
-        <div class="flex flex-col items-center space-y-5 w-full">
-            <div class="text-xs font-semibold text-slate-400 mb-1 tracking-wider uppercase">Preview</div>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-solid fa-code text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Code</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-solid fa-wand-magic-sparkles text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Design</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-regular fa-folder text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">File</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-regular fa-image text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Media</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-solid fa-volume-high text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Audio</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-solid fa-bolt text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">API</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-solid fa-code-branch text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Env Var</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-solid fa-database text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Database</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-solid fa-key text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Auth</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-regular fa-credit-card text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Payment</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-regular fa-comment-dots text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Prompts</span>
-            </a>
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group py-1">
-                <i class="fa-solid fa-list-ul text-lg mb-1 group-hover:scale-110"></i>
-                <span class="text-[10px]">Logs</span>
-            </a>
-        </div>
-        <div class="flex flex-col items-center pt-3 border-t border-slate-700 w-full">
-            <a href="#" class="flex flex-col items-center text-slate-400 hover:text-white transition group">
-                <i class="fa-solid fa-paper-plane text-lg mb-1"></i>
-                <span class="text-[10px]">Request</span>
-            </a>
-        </div>
-    </aside>
-
-    <!-- 2. KHUNG HIỂN THỊ CHÍNH (BÊN PHẢI) - GIAO DIỆN "VIỆC GẤP" -->
+    <!-- KHUNG HIỂN THỊ CHÍNH - GIAO DIỆN "VIỆC GẤP" -->
     <main class="flex-1 bg-white text-slate-800 flex flex-col h-full overflow-hidden relative">
+        <!-- Khung chính chiếm toàn bộ không gian còn lại (flex-1), sắp xếp các phần tử con theo chiều dọc (flex-col) và đặt vị trí tương đối (relative) để cố định thanh điều hướng bên dưới -->
         
         <!-- Header Ứng dụng -->
         <header class="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-white">
+            <!-- Thanh tiêu đề đầu trang: căn giữa các phần tử theo trục dọc, đẩy hai đầu sang trái-phải (justify-between), có lề đệm và đường viền mờ bên dưới -->
             <div class="flex items-center space-x-2">
+                <!-- Nhóm chứa logo thương hiệu -->
                 <div class="text-[#0d9488] text-xl font-bold flex items-center">
+                    <!-- Kiểu chữ màu xanh ngọc (teal), kích thước lớn, đậm -->
                     <i class="fa-solid fa-bolt-lightning text-xl mr-1"></i>
+                    <!-- Icon tia chớp bên cạnh logo -->
                     <span class="text-slate-900 font-extrabold tracking-tight">việcgấp</span>
+                    <!-- Tên thương hiệu "việcgấp" -->
                     <span class="text-amber-500 text-lg ml-0.5">.</span>
+                    <!-- Dấu chấm màu vàng cam điểm nhấn -->
                 </div>
             </div>
             <div>
+                <!-- Khu vực chứa nút bấm hành động -->
                 <button id="btnPostJob" class="bg-[#0d9488] hover:bg-teal-700 text-white font-medium px-4 py-2 rounded-xl text-sm flex items-center shadow-sm transition">
+                    <!-- Nút "Đăng việc gấp": màu nền xanh ngọc, đổi màu khi di chuột (hover), bo tròn góc, có hiệu ứng chuyển động mượt (transition) -->
                     <i class="fa-solid fa-plus mr-2"></i> Đăng việc gấp
+                    <!-- Icon dấu cộng kèm chữ -->
                 </button>
             </div>
         </header>
 
         <!-- Nội dung cuộn bên trong ứng dụng -->
         <div class="flex-1 overflow-y-auto px-6 py-5 pb-24">
+            <!-- Vùng chứa nội dung chính có thể cuộn dọc khi dài (overflow-y-auto), chừa khoảng trống bên dưới (pb-24) để không bị che bởi thanh điều hướng -->
+
             <!-- Tiêu đề trang -->
             <div class="mb-5">
+                <!-- Khối tiêu đề với khoảng cách lề dưới -->
                 <h1 class="text-2xl font-bold text-slate-900 flex items-center">
+                    <!-- Tiêu đề chính "Việc gần bạn" kích thước lớn, chữ đậm -->
                     Việc gần bạn 
                     <a href="#" class="ml-2 inline-flex items-center justify-center w-6 h-6 rounded-md bg-slate-100 text-slate-500 text-xs">
+                        <!-- Nút nhỏ đính kèm icon mũi tên mở rộng -->
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </h1>
                 <p class="text-sm text-slate-500 mt-0.5">Chọn việc phù hợp. Bắt đầu ngay hôm nay.</p>
+                <!-- Đoạn mô tả phụ ngắn gọn -->
                 <div class="flex items-center text-xs text-slate-500 mt-2">
+                    <!-- Dòng trạng thái chú thích dữ liệu mẫu -->
                     <span class="w-2 h-2 rounded-full bg-teal-600 inline-block mr-1.5"></span>
+                    <!-- Chấm tròn màu xanh báo hiệu -->
                     Các việc bên dưới là dữ liệu mẫu
                 </div>
             </div>
 
             <!-- Banner nổi bật -->
             <div class="bg-gradient-to-r from-teal-800 via-teal-700 to-teal-900 rounded-2xl p-6 text-white relative overflow-hidden mb-6 shadow-md">
+                <!-- Khối banner quảng cáo chuyển màu gradient xanh ngọc sang tối, bo góc, có bóng mờ -->
                 <div class="absolute right-[-20px] bottom-[-20px] opacity-15 text-white text-9xl pointer-events-none">
                     <i class="fa-solid fa-bicycle"></i>
                 </div>
+                <!-- Icon xe đạp mờ làm nền trang trí ở góc phải -->
                 <div class="relative z-10 max-w-lg">
+                    <!-- Lớp nội dung chữ nằm trên lớp nền -->
                     <span class="bg-amber-500 text-white text-[11px] font-semibold px-2.5 py-1 rounded-md inline-flex items-center mb-3 shadow-sm">
                         <i class="fa-solid fa-bolt mr-1"></i> Cần người ngay
                     </span>
+                    <!-- Nhãn thông báo màu cam nổi bật -->
                     <h2 class="text-xl md:text-2xl font-bold leading-snug mb-2">
                         Một chuyến giao hàng.<br>Một khoản thu nhập ngay.
                     </h2>
+                    <!-- Tiêu đề lớn của banner -->
                     <p class="text-xs md:text-sm text-teal-100 mb-4 font-medium">
                         Quận 3 &bull; Trong 30 phút &bull; 180.000đ / chuyến
                     </p>
+                    <!-- Thông tin chi tiết: Khu vực, thời gian, mức lương -->
                     <button class="bg-white text-teal-900 hover:bg-teal-50 font-semibold px-4 py-2 rounded-xl text-xs flex items-center transition shadow">
                         Xem việc này <i class="fa-solid fa-arrow-right ml-2"></i>
                     </button>
+                    <!-- Nút hành động xem chi tiết công việc -->
                 </div>
             </div>
 
             <!-- Thanh tìm kiếm và bộ lọc khu vực -->
             <div class="space-y-3 mb-5">
+                <!-- Khối chứa ô tìm kiếm và bộ lọc địa điểm xếp dọc -->
                 <div class="relative">
+                    <!-- Ô nhập từ khóa tìm kiếm công việc -->
                     <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400 text-sm"></i>
+                    <!-- Icon kính lúp bên trong ô nhập -->
                     <input type="text" id="searchInput" placeholder="Bạn muốn làm việc gì?" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-11 pr-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-teal-600 focus:bg-white transition">
                 </div>
                 <div class="relative">
+                    <!-- Hộp lựa chọn (dropdown) lọc theo khu vực -->
                     <i class="fa-solid fa-location-dot absolute left-4 top-3.5 text-slate-500 text-sm"></i>
+                    <!-- Icon định vị địa lý bên trái -->
                     <select id="locationSelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-11 pr-8 text-sm text-slate-800 appearance-none focus:outline-none focus:border-teal-600 focus:bg-white transition cursor-pointer">
                         <option>Tất cả khu vực</option>
                         <option>Quận 1</option>
@@ -146,45 +128,62 @@
                         <option>Quận 7</option>
                         <option>Bình Thạnh</option>
                     </select>
+                    <!-- Các lựa chọn khu vực bên trong -->
                     <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-xs text-slate-400 pointer-events-none"></i>
+                    <!-- Icon mũi tên chỉ xuống bên phải hộp lựa chọn -->
                 </div>
             </div>
 
             <!-- Danh mục dạng pills -->
             <div class="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none mb-5" id="categoryContainer">
+                <!-- Khối danh mục lọc ngang (có thể lướt ngang, ẩn thanh cuộn) -->
                 <button data-category="all" class="category-btn bg-slate-900 text-white px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap shadow-sm transition">Tất cả</button>
+                <!-- Nút danh mục "Tất cả" (đang được chọn mặc định màu tối) -->
                 <button data-category="delivery" class="category-btn bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition">Giao hàng</button>
+                <!-- Nút danh mục "Giao hàng" -->
                 <button data-category="cleaning" class="category-btn bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition">Dọn dẹp</button>
+                <!-- Nút danh mục "Dọn dẹp" -->
                 <button data-category="repair" class="category-btn bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition">Sửa chữa</button>
+                <!-- Nút danh mục "Sửa chữa" -->
                 <button data-category="service" class="category-btn bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition">Phục vụ</button>
+                <!-- Nút danh mục "Phục vụ" -->
             </div>
 
             <!-- Bộ lọc kết quả -->
             <div class="flex items-center justify-between mb-4">
+                <!-- Khối hiển thị số lượng kết quả và tuỳ chỉnh sắp xếp -->
                 <span id="jobCount" class="text-sm font-bold text-slate-800">6 việc phù hợp</span>
+                <!-- Đoạn chữ đếm số lượng công việc -->
                 <div class="flex items-center space-x-4 text-xs text-slate-600">
+                    <!-- Nhóm tùy chọn lọc nâng cao -->
                     <label class="flex items-center cursor-pointer">
                         <input type="checkbox" id="urgentCheck" class="rounded border-slate-300 text-teal-600 focus:ring-teal-500 mr-1.5 w-4 h-4">
                         Chỉ việc gấp
                     </label>
+                    <!-- Hộp kiểm (checkbox) lọc riêng việc gấp -->
                     <button class="flex items-center text-slate-700 font-medium hover:text-teal-600">
                         <i class="fa-solid fa-arrow-down-wide-short mr-1"></i> Gần nhất <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
                     </button>
+                    <!-- Nút sắp xếp theo tiêu chí gần nhất -->
                 </div>
             </div>
         </div>
 
         <!-- Thanh điều hướng dưới cùng (Bottom Navigation cho Mobile View) -->
         <nav class="absolute bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-4 py-2.5 flex justify-around items-center z-10 shadow-lg">
+            <!-- Thanh menu điều hướng dưới màn hình: cố định ở đáy (absolute bottom-0), có bóng đổ (shadow-lg) -->
             <a href="#" class="flex flex-col items-center text-[#0d9488]">
+                <!-- Mục tab "Tìm việc" đang được chọn (màu xanh ngọc) -->
                 <i class="fa-solid fa-magnifying-glass text-base mb-1"></i>
                 <span class="text-[11px] font-medium">Tìm việc</span>
             </a>
             <a href="#" class="flex flex-col items-center text-slate-400 hover:text-slate-600 transition">
+                <!-- Mục tab "Đã nhận" -->
                 <i class="fa-solid fa-briefcase text-base mb-1"></i>
                 <span class="text-[11px]">Đã nhận</span>
             </a>
             <a href="#" class="flex flex-col items-center text-slate-400 hover:text-slate-600 transition">
+                <!-- Mục tab "Đăng việc" -->
                 <i class="fa-solid fa-plus text-base mb-1"></i>
                 <span class="text-[11px]">Đăng việc</span>
             </a>
@@ -193,5 +192,6 @@
 
     <!-- File JavaScript riêng -->
     <script src="script.js"></script>
+    <!-- Nhúng tệp xử lý logic tương tác JavaScript nằm ở file script.js bên ngoài -->
 </body>
 </html>
